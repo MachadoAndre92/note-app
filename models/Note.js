@@ -3,17 +3,17 @@ const mongoose = require('mongoose');
 const NoteSchema = new mongoose.Schema( {
     title: {
         type: String,
-        require: [true, 'Insira um Titulo'],
-        unic: true,
+        required: [true, 'Insira um Titulo'],
+        unique: true,
         trim: true,
-        maxLength: [40, 'O titulo não pode conter mais que 40 caracteres']
+        maxlength: [40, 'O titulo não pode conter mais que 40 caracteres']
     },
     description:{
         type: String,
         required: true,
-        maxLength: [200, 'A descrição não pode conter mais que 200 caracteres']
+        maxlength: [200, 'A descrição não pode conter mais que 200 caracteres']
 
     }
 })
 
-module.exports = mongoose.model.Note || mongoose.model('Note', NoteSchema);
+module.exports = mongoose.models.Note || mongoose.model('Note', NoteSchema);
