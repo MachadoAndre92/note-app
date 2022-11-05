@@ -42,9 +42,10 @@ const IndexPage =({notes})=>{
 }
 
 
-
+//https://note-app-khaki.vercel.app
+//http://localhost:3000/api/notes
 IndexPage.getInitialProps = async () =>{
-  const res = await fetch('http://localhost:3000/api/notes');
+  const res = await fetch('https://note-app-khaki.vercel.app');
   const {data} = await res.json();
   return{notes: data}
 }
